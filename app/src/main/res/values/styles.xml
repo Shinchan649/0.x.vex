@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.VexApp" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorPrimaryDark">#6200EE</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+</resources>
