@@ -1,35 +1,42 @@
-# 0.x.vex - Crypto Dust Collector
+# Crypto Dust Collector
 
-A simple tool to collect "dust" (small amounts of crypto) from multiple wallets and send them to a single destination address.
+The ultimate tool for consolidating small balances ("dust") from multiple wallets into a single destination.
 
-## Features
-- Collects remaining balances from multiple EVM-compatible wallets.
-- Automatically calculates gas fees to ensure transfers are profitable.
-- Supports any EVM-compatible network (Ethereum, Polygon, BSC, etc.).
+## 🚀 Features
 
-## Setup
+- **Multi-Chain Support**: Ethereum, Polygon, BSC.
+- **Native & ERC20 Sweeping**: Automatically detects and sweeps native coins and common stablecoins (USDC, USDT, BUSD).
+- **Pro Logic**:
+    - **HD Wallets**: Generate or import wallets using BIP39 mnemonics.
+    - **Gas Optimization**: Choose between Patient, Normal, and Aggressive gas strategies.
+    - **1inch Integration**: Swap dust to stablecoins before sweeping (requires 1inch API key).
+    - **NFT Support**: Safety-first NFT sweeping (ERC721).
+    - **Security**: Revoke risky allowances with one click.
+- **Platforms**:
+    - **Node.js CLI**: For power users and automation.
+    - **Flutter Mobile App**: For on-the-go management.
 
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+## 🛠 Setup (CLI)
 
-2. **Configure environment variables:**
-   - Copy `.env.example` to `.env`.
-   - Add your RPC URL, private keys (comma-separated), and destination address.
-   ```bash
-   cp .env.example .env
-   ```
+1. `cd /app`
+2. `npm install`
+3. `cp .env.example .env` (Add your RPC URLs and Private Keys)
+4. `node index.js`
 
-3. **Run the collector:**
-   ```bash
-   npm start
-   ```
+## 📱 Mobile App (Flutter)
 
-## Usage
+### Prerequisites
+- Flutter SDK
+- Android Studio / Xcode
 
-Ensure you have enough balance in the source wallets to cover the gas fees for the transfer. The tool will skip wallets where the balance is less than the estimated gas cost.
+### Local Build
+1. `cd /app/mobile`
+2. `flutter pub get`
+3. `flutter run --release`
 
-## Warning
+### Logic Verification
+Run the comprehensive test suite:
+`flutter test`
 
-**Never share your private keys.** Keep your `.env` file secure and never commit it to version control.
+## 🛡 Security Note
+This tool handles private keys. **Never** share your mnemonic or private keys with anyone. Use at your own risk.
